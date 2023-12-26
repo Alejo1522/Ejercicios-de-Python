@@ -1,11 +1,14 @@
-# Escriba un programa que permita determinar el número mayor perteneciente a un conjunto de n números, donde tanto el valor de n como el de los números deben ser ingresados por el usuario.
+# Escriba un programa para que reconozca oraciones palíndromas. La dificultad radica en que hay que ignorar los espacios:
 
-cantidad=int(input("Cuantos números desea ingresar?: "))
+def crear_palindromo(frase):
+    fraseSinEspacios=''.join(frase.split()).lower()
+    return fraseSinEspacios == fraseSinEspacios[::-1]
 
-for i in range(1, cantidad+1):
-    numero=int(input("Ingrese un número: "))
-    mayor=numero
-    if mayor<numero:
-        mayor=numero
+frase=input("Ingrese palabra: ")
 
-print(f"El mayor es {mayor}")
+resultado=crear_palindromo(frase)
+
+if resultado:
+    print("Es palindromo")
+else:
+    print ("No es palindromo")
