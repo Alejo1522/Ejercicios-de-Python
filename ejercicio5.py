@@ -1,24 +1,7 @@
-# Calculadora
-# Escriba un programa que simule una calculadora básica, este puede realizar operación de suma, resta, multiplicación y división.
-
-# El programa debe recibir como entrada 2 números reales y un operador, que puede ser +, -, * o /.
-
-# La salida del programa debe ser el resultado de la operación.
-
-def ordenarNumeros(numero1,operador,numero2):
-    if operador == "+":
-        return (f"{numero1} + {numero2} = {numero1 + numero2}")
-    elif operador == "-":
-        return (f"{numero1} - {numero2} = {numero1 - numero2}")
-    elif operador == "*":
-        return (f"{numero1} * {numero2} = {numero1 * numero2}")
-    elif operador == "/":
-        return (f"{numero1} // {numero2} = {numero1 // numero2}")
-    elif operador == "**":
-        return (f"{numero1} ** {numero2} = {numero1 ** numero2}")
+# Escriba un programa que entregue todos los divisores del número entero ingresado:
     
-numero1=int(input("Ingrese un número : "))
-operador=input("Ingrese la operación: ")
-numero2=int(input("Ingrese otro número : "))
+numero=int(input("Ingrese un número : "))
 
-print(ordenarNumeros(numero1,operador,numero2))
+for i in range(1, numero+1):
+    if numero % i == 0:
+        print(i, end=" ")
