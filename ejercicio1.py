@@ -1,8 +1,11 @@
-# Escriba un programa que pida al usuario que escriba su nombre, y lo salude llamándolo por su nombre.
+#Escriba un programa que determine si el número entero ingresado por el usuario es par o no.
 
-def mensaje(nombre):
-    return (f"Hola, {nombre}")
+def determinarPar(numero):
+    if numero%2==0:
+        return ("Su número es par")
+    else:
+        return ("Su número es impar")
+    
+numero=(int(input("Ingrese un numero: ")))
 
-nombre=input("Ingrese su nombre: ")
-
-print(mensaje(nombre))
+print(determinarPar(numero))
