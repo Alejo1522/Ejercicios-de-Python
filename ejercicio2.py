@@ -2,6 +2,7 @@
 # Matemáticamente lo que se pide que haga el programa es realizar la siguiente sumatoria.
 # S1=∑i=1ni=1+2+3+4+5+6+⋯+n
 # Además, obtenga el resultado de la siguiente fórmula.
+
 # S2n×(n+1)/2
 # El programa debe entregar el resultado diciendo si S1 y S2 son iguales o no.
 
