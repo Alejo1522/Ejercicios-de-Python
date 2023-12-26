@@ -1,16 +1,18 @@
-# Escriba un programa que pida dos números enteros y que calcule la división, indicando si la división es exacta o no.
+# Escriba un programa que pida al usuario dos números enteros, y luego entregue la suma de todos los números que están entre ellos. Por ejemplo, si los números son 1 y 7, debe entregar como resultado 2 + 3 + 4 + 5 + 6 = 20.
 
-def division(dividendo, divisor):
-    if dividendo % divisor == 0:
-        Cociente= dividendo // divisor
-        Resto= dividendo % divisor
-        return (f"La división es exacta, Cociente:{Cociente} , Resto:{Resto} ")
-    else:
-        Cociente= dividendo // divisor
-        Resto= dividendo % divisor
-        return (f"La división no es exacta, Cociente:{Cociente} , Resto:{Resto} ")
+numero1=int(input("Ingrese un número: "))
+numero2=int(input("Ingrese otro número: "))
 
-dividendo=int(input("Ingrese el dividendo: "))
-divisor=int(input("Ingrese el divisor: "))
+if numero1>numero2:
+    numero1, numero2 = numero2, numero1
 
-print(division(dividendo, divisor))
+suma=0
+expresion=""
+
+for i in range (numero1+1, numero2):
+    suma += i
+    expresion += str(i)
+    if i+1 < numero2:
+        expresion+=" + "
+
+print(f"{expresion} = {suma}")
