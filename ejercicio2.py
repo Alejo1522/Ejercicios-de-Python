@@ -1,12 +1,11 @@
-# Escriba un programa que reciba como entrada el radio de un círculo y entregue como salida su perímetro y su área:
+# Escriba un programa que indique si un año es bisiesto o no, teniendo en cuenta cuál era el calendario vigente en ese año:
 
-def area(radio):
-    return (f"El area del circulo es {3.14*radio**2}")
+def es_bisiesto(year):
+    if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0):
+        return (f"{year} es bisiesto")
+    else:
+        return (f"{year} no es bisiesto")
 
-def perimetro(radio):
-    return (f"El perimetro del circulo es {2*(3.14)*radio}")
+year=int(input("Ingrese un año: "))
 
-radio=float(input("Ingrese el radio del circulo: "))
-
-print(area(radio))
-print(perimetro(radio))
+print(es_bisiesto(year))
