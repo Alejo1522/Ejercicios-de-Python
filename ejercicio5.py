@@ -1,9 +1,24 @@
-# Escriba un programa que pida al usuario un entero de tres dígitos, y entregue el número con los dígitos en orden inverso
+# Calculadora
+# Escriba un programa que simule una calculadora básica, este puede realizar operación de suma, resta, multiplicación y división.
 
-def numeroInvertido(numero):
-    numero_invertido = int(str(numero)[::-1])
-    return numero_invertido
+# El programa debe recibir como entrada 2 números reales y un operador, que puede ser +, -, * o /.
 
-numero=int(input("Ingrese el numero que va a invertir: "))
+# La salida del programa debe ser el resultado de la operación.
 
-print(numeroInvertido(numero))
+def ordenarNumeros(numero1,operador,numero2):
+    if operador == "+":
+        return (f"{numero1} + {numero2} = {numero1 + numero2}")
+    elif operador == "-":
+        return (f"{numero1} - {numero2} = {numero1 - numero2}")
+    elif operador == "*":
+        return (f"{numero1} * {numero2} = {numero1 * numero2}")
+    elif operador == "/":
+        return (f"{numero1} // {numero2} = {numero1 // numero2}")
+    elif operador == "**":
+        return (f"{numero1} ** {numero2} = {numero1 ** numero2}")
+    
+numero1=int(input("Ingrese un número : "))
+operador=input("Ingrese la operación: ")
+numero2=int(input("Ingrese otro número : "))
+
+print(ordenarNumeros(numero1,operador,numero2))
