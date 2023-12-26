@@ -1,11 +1,7 @@
-#Escriba un programa que determine si el número entero ingresado por el usuario es par o no.
+#Escriba un programa que muestre la tabla de multiplicar del 1 al 10 del número ingresado por el usuario:
 
-def determinarPar(numero):
-    if numero%2==0:
-        return ("Su número es par")
-    else:
-        return ("Su número es impar")
-    
-numero=(int(input("Ingrese un numero: ")))
+numero=int(input("Ingrese un numero: "))
 
-print(determinarPar(numero))
+for i in range(1, 11):
+    resultado=numero * i
+    print(f"{numero} * {i} = {resultado}")
