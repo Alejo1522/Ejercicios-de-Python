@@ -1,7 +1,7 @@
-#Escriba un programa que muestre la tabla de multiplicar del 1 al 10 del número ingresado por el usuario:
+# Escriba un programa que muestre los números naturales menores o iguales que un número n determinado, que no sean múltiplos ni de 3 ni de 7.
 
 numero=int(input("Ingrese un numero: "))
 
-for i in range(1, 11):
-    resultado=numero * i
-    print(f"{numero} * {i} = {resultado}")
+for i in range(1, numero+1):
+    if i % 3 != 0 and i % 7 != 0:
+        print(i, end=" ")
