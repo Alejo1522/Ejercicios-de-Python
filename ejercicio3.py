@@ -1,10 +1,16 @@
-#Escriba un programa que calcule el promedio de 4 notas ingresadas por el usuario:
-nota=0
-def promedio(nota):
-    return (f"El promeido es de {nota/4}")
+# Escriba un programa que pida dos números enteros y que calcule la división, indicando si la división es exacta o no.
 
-for i in range(4):
-    notas=float(input(f"Digite la nota {i+1}: "))
-    nota=nota+notas
+def division(dividendo, divisor):
+    if dividendo % divisor == 0:
+        Cociente= dividendo // divisor
+        Resto= dividendo % divisor
+        return (f"La división es exacta, Cociente:{Cociente} , Resto:{Resto} ")
+    else:
+        Cociente= dividendo // divisor
+        Resto= dividendo % divisor
+        return (f"La división no es exacta, Cociente:{Cociente} , Resto:{Resto} ")
 
-print(promedio(nota))
+dividendo=int(input("Ingrese el dividendo: "))
+divisor=int(input("Ingrese el divisor: "))
+
+print(division(dividendo, divisor))
