@@ -1,3 +1,4 @@
+# Adivinar el número
 # Escriba un programa que «piense» un número entre 0 y 100, y entregue pistas al usuario para que lo adivine.
 # El programa puede obtener un número al azar entre 0 y 100.
 # El usuario debe ingresar su intento, y el programa debe decir si el número pensado es mayor, menor, o el correcto.
