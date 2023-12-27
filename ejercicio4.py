@@ -5,35 +5,41 @@
 # El ganador del juego es el primero que gane tres rondas.
 
 # Escriba un programa que pregunte a cada jugador cuál es su jugada, muestre cuál es el marcador después de cada ronda, y termine cuando uno de ellos haya ganado tres rondas. Los jugadores deben indicar su jugada escribiendo tijera, papel o piedra.
-puntajeA=0
-puntajeB=0
-def jugar_ronda(jugadorA, jugadorB):
-    if jugadorA==jugadorB:
-        return 0
-    elif(jugadorA == "piedra" and jugadorB == "tijera") or (jugadorA == "papel" and jugadorB == "piedra") or (jugadorA == "tijera" and jugadorB == "papel"):
-        return (f"{puntajeA+1} - {puntajeB}")
-    
+def obtener_jugada():
+    jugada=input("Elige una opción piedra, papel o tijera.: ")
+    while jugada.lower() not in ["piedra", "papel", "tijera"]:
+        print("Opción incorrecta, intentelo de nuevo")
+        jugada=input("Elige una opción piedra, papel o tijera.: ")
+    return jugada.lower()
+
+def determinarGanador(jugador1, jugador2):
+    if jugador1==jugador2:
+        return "empate"
+    elif(jugador1 == "piedra" and jugador2 == "tijera") or (jugador1 == "papel" and jugador2 == "piedra") or (jugador1 == "tijera" and jugador2 == "papel"): 
+        return "jugador1"
     else:
-        return (f"{puntajeA} - {puntajeB+1}")
+        return "jugador2"
         
-def jugar_juego():
-    rondas=3
+def mostrar_puntaje(puntaje_jugador1,puntaje_jugador2):
+    return (f"Marcador: A: {puntaje_jugador1} - B: {puntaje_jugador2}")
+    
+puntaje_jugador1=0
+puntaje_jugador2=0
 
-    jugadores=["jugadorA", "jugadorB"]
-    opciones=["piedra","tijera","papel"]
+while puntaje_jugador1 < 3 and puntaje_jugador2 < 3:
+    jugador1=obtener_jugada()
+    jugador2=obtener_jugada()
 
-    for ronda in range(1, rondas+1):
-        print(f"Ronda: {ronda}")
+    ganador=determinarGanador(jugador1, jugador2)
 
-        for jugador in jugadores:
-            seleccion=input(f"{jugador} elige una opcion piedra, papel o tijera: ").lower()
+    if ganador=="jugador1":
+        puntaje_jugador1+=1
+    elif ganador=="jugador2":
+        puntaje_jugador2+=1
 
-            while seleccion not in opciones:
-                print("¡Opción no valida! Debes elegir piedra, papel o tijera")
-                seleccion=input(f"{jugador} elige una opcion piedra, papel o tijera: ").lower()
+    print(mostrar_puntaje(puntaje_jugador1,puntaje_jugador2))
 
-        resultado=jugar_ronda(jugadores[0], jugadores[1])
-        print(f"{resultado}")
-        
-
-jugar_juego()
+if puntaje_jugador1==3:
+    print("El ganador es el jugador 1!!")
+else:
+    print("El ganador es el jugador 2!!")
